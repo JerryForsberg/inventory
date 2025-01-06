@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/common/Navbar';
-import Dashboard from './components/pages/Dashboard/Dashboard.js';
+import Dashboard from './components/pages/Dashboard/Dashboard';
 import Inventory from './components/pages/Inventory/Inventory.js';
 import Sales from './components/pages/Sales/Sales.js';
 import Users from './components/pages/UserManagement/UserManagement.js';
@@ -15,10 +15,10 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" exact component={Dashboard} />
-          <Route path="/inventory" component={Inventory} />
-          <Route path="/sales" component={Sales} />
-          <Route path="/users" component={Users} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/sales" element={<Sales />} />
+          <Route path="/user-management" element={<Users />} />
         </Routes>
       </Router>
     </ThemeProvider>

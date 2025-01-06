@@ -4,6 +4,7 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, BarChart, Bar, L
 import './Dashboard.css';
 
 const Dashboard = () => {
+    console.log("Dashboard hit")
     // Sample data
     const salesData = [
         { month: 'Jan', sales: 120 },

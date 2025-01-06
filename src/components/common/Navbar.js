@@ -1,5 +1,7 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { AppBar, Toolbar, Typography } from '@mui/material';
+import { NavLink } from 'react-router-dom';
+import styles from './Navbar.module.scss'
 
 const Navbar = () => (
     <AppBar position="static">
@@ -7,10 +9,12 @@ const Navbar = () => (
             <Typography variant="h6" style={{ flexGrow: 1 }}>
                 Inventory Management
             </Typography>
-            <Button color="inherit">Dashboard</Button>
-            <Button color="inherit">Inventory</Button>
-            <Button color="inherit">Sales</Button>
-            <Button color="inherit">Users</Button>
+            <nav>
+                <NavLink to="/" className={({ isActive }) => isActive ? styles.active : styles.link}>Dashboard</NavLink>
+                <NavLink to="/sales" className={({ isActive }) => isActive ? styles.active : styles.link}>Sales</NavLink>
+                <NavLink to="/inventory" className={({ isActive }) => isActive ? styles.active : styles.link}>Inventory</NavLink>
+                <NavLink to="/user-management" className={({ isActive }) => isActive ? styles.active : styles.link}>User Management</NavLink>
+            </nav>
         </Toolbar>
     </AppBar>
 );
