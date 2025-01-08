@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:7071/api';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:7071/api';
 
 export const getInventory = async () => axios.get(`${API_BASE_URL}/getInventory`);
 export const addInventoryItem = async (item) => axios.post(`${API_BASE_URL}/addInventory`, item);
