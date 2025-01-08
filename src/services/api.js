@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://your-api-endpoint.azurewebsites.net';
+const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:7071/api';
 
-export const getInventory = async () => axios.get(`${API_BASE_URL}/inventory`);
-export const addInventoryItem = async (item) => axios.post(`${API_BASE_URL}/inventory`, item);
+export const getInventory = async () => axios.get(`${API_BASE_URL}/getInventory`);
+export const addInventoryItem = async (item) => axios.post(`${API_BASE_URL}/addInventory`, item);
+export const updateInventory = async (id, newQuantity) => axios.put(`${API_BASE_URL}/updateInventory?id=${id}`, { quantity: newQuantity });
+export const getAnalytics = async () => axios.get(`${API_BASE_URL}/getAnalytics`);
+
