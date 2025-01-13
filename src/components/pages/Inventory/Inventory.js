@@ -62,7 +62,7 @@ const Inventory = () => {
     };
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 100 },
+        { field: 'ID', headerName: 'ID', width: 100 },
         { field: 'name', headerName: 'Name', width: 200 },
         { field: 'quantity', headerName: 'Quantity', width: 150 },
     ];
@@ -81,7 +81,7 @@ const Inventory = () => {
                     loading={loading}
                     pageSize={5}
                     rowsPerPageOptions={[5, 10, 20]}
-                    getRowId={(row) => row.id}
+                    getRowId={(row) => row.ID}
                 />
             </Box>
 
