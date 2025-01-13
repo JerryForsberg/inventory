@@ -28,15 +28,15 @@ const Inventory = () => {
 
     const addNewInventoryItem = async () => {
         try {
-            const { name, quantity } = newItem;
-            if (!name || !quantity) {
+            const { name, quantity, price } = newItem;
+            if (!name || !quantity || !price) {
                 alert('Please provide both name and quantity');
                 return;
             }
 
             const response = addInventoryItem(newItem)
             console.log('Item added:', response.data);
-            setNewItem({ name: '', quantity: '' });
+            setNewItem({ name: '', quantity: '', price: '' });
             fetchInventory(); // Refresh inventory
         } catch (error) {
             console.error('Error adding item:', error);
@@ -65,6 +65,7 @@ const Inventory = () => {
         { field: 'ID', headerName: 'ID', width: 100 },
         { field: 'Name', headerName: 'Name', width: 200 },
         { field: 'Quantity', headerName: 'Quantity', width: 150 },
+        { price: 'Price', headerName: 'Price', width: 200 }
     ];
 
     return (
