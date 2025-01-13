@@ -65,7 +65,7 @@ const Inventory = () => {
         { field: 'ID', headerName: 'ID', width: 100 },
         { field: 'Name', headerName: 'Name', width: 200 },
         { field: 'Quantity', headerName: 'Quantity', width: 150 },
-        { price: 'Price', headerName: 'Price', width: 200 }
+        { field: 'Price', headerName: 'Price', width: 200 }
     ];
 
     return (
