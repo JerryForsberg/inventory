@@ -111,7 +111,7 @@ const Inventory = () => {
                     type="number"
                     variant="outlined"
                     value={newItem.price}
-                    onChange={(e) => setNewItem({ ...newItem, quantity: e.target.value })}
+                    onChange={(e) => setNewItem({ ...newItem, price: e.target.value })}
                     sx={{ marginRight: 2 }}
                 />
                 <Button variant="contained" onClick={addNewInventoryItem}>
