@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { getInventory, addInventoryItem } from '../../../services/api';
+import { getInventory, addInventoryItem, updateInventory } from '../../../services/api';
 import { Box, TextField, Button, Typography } from '@mui/material';
 
 const Inventory = () => {
