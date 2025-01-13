@@ -106,6 +106,14 @@ const Inventory = () => {
                     onChange={(e) => setNewItem({ ...newItem, quantity: e.target.value })}
                     sx={{ marginRight: 2 }}
                 />
+                <TextField
+                    label="Price"
+                    type="number"
+                    variant="outlined"
+                    value={newItem.price}
+                    onChange={(e) => setNewItem({ ...newItem, quantity: e.target.value })}
+                    sx={{ marginRight: 2 }}
+                />
                 <Button variant="contained" onClick={addNewInventoryItem}>
                     Add Item
                 </Button>
