@@ -81,6 +81,7 @@ const Inventory = () => {
                     loading={loading}
                     pageSize={5}
                     rowsPerPageOptions={[5, 10, 20]}
+                    getRowId={(row) => row.id}
                 />
             </Box>
 
