@@ -5,7 +5,7 @@ import { Box, TextField, Button, Typography } from '@mui/material';
 
 const Inventory = () => {
     const [inventory, setInventory] = useState([]); // Inventory list
-    const [newItem, setNewItem] = useState({ name: '', quantity: '' }); // For adding new items
+    const [newItem, setNewItem] = useState({ name: '', quantity: '', price: '' }); // For adding new items
     const [updateItem, setUpdateItem] = useState({ id: '', quantity: '' }); // For updating an item
     const [loading, setLoading] = useState(false);
 
