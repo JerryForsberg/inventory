@@ -51,7 +51,7 @@ const Inventory = () => {
                 return;
             }
 
-            const response = updateInventory(updateItem)
+            const response = updateInventory(id, quantity)
 
             console.log('Item updated:', response.data);
             setUpdateItem({ id: '', quantity: '' });
