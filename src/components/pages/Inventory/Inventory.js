@@ -30,20 +30,23 @@ const Inventory = () => {
         try {
             const { name, quantity, price } = newItem;
             if (!name || !quantity || !price) {
-                alert('Please provide both name and quantity');
+                alert('Please provide all fields');
                 return;
             }
 
-            const response = addInventoryItem(newItem)
+            const response = await addInventoryItem(newItem)
             console.log('Item added:', response.data);
+            setInventory((prevInventory) => [...prevInventory, response.data])
             setNewItem({ name: '', quantity: '', price: '' });
-            fetchInventory(); // Refresh inventory
         } catch (error) {
             console.error('Error adding item:', error);
         }
     };
 
     const updateInventoryItem = async () => {
+
+        let prevInventory = [];
+
         try {
             const { id, quantity } = updateItem;
             if (!id || !quantity) {
@@ -51,13 +54,20 @@ const Inventory = () => {
                 return;
             }
 
-            const response = updateInventory(id, quantity)
+            prevInventory = [...inventory];
 
+            setInventory((prevInventory) =>
+                prevInventory.map((item) =>
+                    item.ID === id ? { ...item, Quantity: quantity } : item
+                )
+            );
+
+            const response = await updateInventory(id, quantity)
             console.log('Item updated:', response.data);
             setUpdateItem({ id: '', quantity: '' });
-            fetchInventory(); // Refresh inventory
         } catch (error) {
             console.error('Error updating item:', error);
+            setInventory(prevInventory)
         }
     };
 
