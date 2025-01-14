@@ -36,7 +36,7 @@ const Inventory = () => {
 
             const response = await addInventoryItem(newItem)
             console.log('Item added:', response.data);
-            setInventory((prevInventory) => [...prevInventory, response.data[0]])
+            setInventory((prevInventory) => [...prevInventory, response.data])
             setNewItem({ name: '', quantity: '', price: '' });
         } catch (error) {
             console.error('Error adding item:', error);
