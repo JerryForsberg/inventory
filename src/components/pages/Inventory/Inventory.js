@@ -35,7 +35,6 @@ const Inventory = () => {
             }
 
             const response = await addInventoryItem(newItem)
-            console.log('parsed response: ', JSON.parse(response))
             console.log('stringified response: ', JSON.stringify(response))
             console.log('Type of response.data:', typeof response.data);
             console.log('Raw response.data:', response.data);
