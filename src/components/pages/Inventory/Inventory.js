@@ -40,7 +40,7 @@ const Inventory = () => {
             console.log('Full response:', response);
 
             // console.log('Item added:', response.data);
-            setInventory((prevInventory) => [...prevInventory, JSON.stringify(response.data)])
+            setInventory((prevInventory) => [...prevInventory, JSON.parse(response.data)])
             setNewItem({ name: '', quantity: '', price: '' });
         } catch (error) {
             console.error('Error adding item:', error);
