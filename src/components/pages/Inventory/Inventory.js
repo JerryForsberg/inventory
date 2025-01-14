@@ -35,13 +35,9 @@ const Inventory = () => {
             }
 
             const response = await addInventoryItem(newItem)
-            console.log('stringified response: ', JSON.stringify(response))
-            console.log('Type of response.data:', typeof response.data);
-            console.log('Raw response.data:', response.data);
-            console.log('Full response:', response);
 
-            // console.log('Item added:', response.data);
-            setInventory((prevInventory) => [...prevInventory, JSON.parse(response.data)])
+            console.log('Item added:', response.data);
+            setInventory((prevInventory) => [...prevInventory, response.data])
             setNewItem({ name: '', quantity: '', price: '' });
         } catch (error) {
             console.error('Error adding item:', error);
