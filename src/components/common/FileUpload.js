@@ -16,6 +16,7 @@ const FileUpload = () => {
         }
 
         const formData = new FormData();
+        console.log('this is the file that is uploaded', file)
         formData.append('file', file);
 
         try {
