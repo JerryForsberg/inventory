@@ -12,7 +12,7 @@ export const uploadFile = async (file) => axios.post(
     {
         headers: {
             'Content-Type': file.type,
-            'file-name': file.name,
+            'File-Name': file.name,
         },
     }
 );
