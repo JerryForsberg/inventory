@@ -6,4 +6,6 @@ export const getInventory = async () => axios.get(`${API_BASE_URL}/getInventory`
 export const addInventoryItem = async (item) => axios.post(`${API_BASE_URL}/addInventory`, item);
 export const updateInventory = async (id, newQuantity) => axios.put(`${API_BASE_URL}/updateInventory?id=${id}`, { quantity: newQuantity });
 export const getAnalytics = async () => axios.get(`${API_BASE_URL}/getAnalytics`);
+export const uploadFile = async () => axios.get(`${API_BASE_URL}/uploadFile`);
+
 

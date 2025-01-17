@@ -2,6 +2,7 @@
 import React from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, BarChart, Bar, Legend } from 'recharts';
 import './Dashboard.css';
+import FileUpload from '../../common/FileUpload';
 
 const Dashboard = () => {
     // Sample data
@@ -66,6 +67,7 @@ const Dashboard = () => {
                     <Bar dataKey="sales" fill="#82ca9d" />
                 </BarChart>
             </div>
+            <FileUpload />
         </div>
     );
 };
