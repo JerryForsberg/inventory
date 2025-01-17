@@ -19,6 +19,7 @@ const FileUpload = () => {
 
         try {
             const response = await uploadFile(file)
+            console.log("response: ", JSON.parse(response))
             setUploadResult(response.data.fileUrl);
         } catch (error) {
             console.error('Error uploading file:', error);
