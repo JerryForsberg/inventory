@@ -19,7 +19,7 @@ const FileUpload = () => {
         formData.append('file', file);
 
         try {
-            const response = await uploadFile()
+            const response = await uploadFile(file)
             setUploadResult(response.data.fileUrl);
         } catch (error) {
             console.error('Error uploading file:', error);
