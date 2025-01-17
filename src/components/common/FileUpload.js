@@ -15,9 +15,7 @@ const FileUpload = () => {
             return;
         }
 
-        const formData = new FormData();
         console.log('this is the file that is uploaded', file)
-        formData.append('file', file);
 
         try {
             const response = await uploadFile(file)
