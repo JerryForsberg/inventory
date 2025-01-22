@@ -9,13 +9,14 @@ export const getAnalytics = async () => axios.get(`${API_BASE_URL}/getAnalytics`
 export const uploadFile = async (file) => {
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('fileName', file.name);
     axios.post(
         `${API_BASE_URL}/uploadFile`,
         formData,
         {
             headers: {
-                'File-Name': file.name,
-            },
+                'Content-Type': 'multipart/form-data',
+            }
         }
     );
 }
