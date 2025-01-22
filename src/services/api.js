@@ -14,7 +14,6 @@ export const uploadFile = async (file) => {
         formData,
         {
             headers: {
-                'Content-Type': 'multipart/form-data',
                 'File-Name': file.name,
             },
         }
