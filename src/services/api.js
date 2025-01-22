@@ -10,7 +10,7 @@ export const uploadFile = async (file) => {
     const formData = new FormData();
     formData.append('file', file);
     formData.append('fileName', file.name);
-    axios.post(
+    const response = axios.post(
         `${API_BASE_URL}/uploadFile`,
         formData,
         {
@@ -19,6 +19,7 @@ export const uploadFile = async (file) => {
             }
         }
     );
+    return response
 }
 
 
