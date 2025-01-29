@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/common/Navbar';
 import Dashboard from './components/pages/Dashboard/Dashboard';
@@ -9,8 +9,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme'; // Import the theme from the theme.js file
 import { API_BASE_URL } from './services/api.js'
 import './App.css';
-import Login from './components/common/login.js';
-
+import Login from './components/common/Login.js';
+import axios from 'axios';
 function App() {
 
   const [user, setUser] = useState(null); // user is initially null
@@ -30,21 +30,22 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      {user} ? (
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/inventory" element={<Inventory />} />
-          <Route path="/sales" element={<Sales />} />
-          <Route path="/user-management" element={<Users />} />
-        </Routes>
-      </Router>
-      ) :
-      <div>
-        <p>No Access</p>
-        <Login />
-      </div>
+      {user ? (
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/inventory" element={<Inventory />} />
+            <Route path="/sales" element={<Sales />} />
+            <Route path="/user-management" element={<Users />} />
+          </Routes>
+        </Router>
+      ) : (
+        <div>
+          <p>No Access</p>
+          <Login />
+        </div>
+      )}
     </ThemeProvider>
   );
 }
