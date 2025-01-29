@@ -5,7 +5,7 @@ const Login = () => {
         window.location.href = `${API_BASE_URL}/auth/login`
     }
 
-    return <button onClick={() => handleLogin}>Login</button>
+    return <button onClick={handleLogin}>Login</button>
 }
 
 export default Login;
