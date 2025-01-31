@@ -20,7 +20,8 @@ function App() {
       .get(`${API_BASE_URL}/auth/me`, { withCredentials: true }) // Make a GET request to your backend
       .then(response => {
         console.log('response in app.js: ', response)
-        setUser(response.data.user.userId); // If successful, store user data in state
+        const parsedUser = JSON.parse(response)
+        setUser(parsedUser.userId); // If successful, store user data in state
       })
       .catch(() => {
         setUser(null); // If failed (e.g., no valid session), set user to null
